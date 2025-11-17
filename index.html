@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Special Question for You 💌</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="floating-hearts"></div>
+
+    <header class="hero fade-in">
+        <h1>Hey You 💖</h1>
+        <p>I’ve been wanting to ask you something special…</p>
+    </header>
+
+    <main>
+        <!-- INTRO -->
+        <section class="section soft-card">
+            <h2>Can We Go Out Together? ✨</h2>
+            <p>
+                I really enjoy talking to you…  
+                And being around you…  
+                And honestly, you make me smile way too much 😅  
+                <br><br>
+                So I made this little page just to ask you something properly.
+            </p>
+        </section>
+
+        <!-- THE PLAN -->
+        <section class="section soft-card">
+            <h2>The Plan for Our Evening 🌙</h2>
+
+            <div class="timeline">
+                <div class="step">
+                    <span class="time">1.</span>
+                    <div>
+                        <h3>We meet up</h3>
+                        <p>I’ll be there, probably nervous but very happy to see you 😳</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="time">2.</span>
+                    <div>
+                        <h3>We spend some time together</h3>
+                        <p>Talk, chill, laugh, enjoy the moment… just you and me.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="time">3.</span>
+                    <div>
+                        <h3>A night walk with me 🤝🌙</h3>
+                        <p>
+                            Then we go on a little <strong>night walk</strong>,  
+                            and if you’re comfortable…  
+                            <strong>I’d love to hold your hand</strong> while we walk.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY HER -->
+        <section class="section soft-card">
+            <h2>Why I Want This With You 💫</h2>
+            <p>
+                You make things feel light.  
+                You make me smile without trying.  
+                I love the way I feel around you.  
+                And honestly… walking next to you, holding your hand,  
+                sounds perfect to me.
+            </p>
+        </section>
+
+        <!-- THE QUESTION -->
+        <section class="section question-card">
+            <h2>The Big Question 💌</h2>
+            <p class="main-question">
+                Will you go on a date with me  
+                and come on a night walk holding my hand? 🥺🤍
+            </p>
+
+            <div class="buttons">
+                <button id="yes-btn">Yes 💕</button>
+                <button id="no-btn">Maybe / Not yet 🙈</button>
+            </div>
+
+            <p id="yes-message" class="answer hidden">
+                You just made me so happy 😭💖  
+                Before I melt… write a little paragraph for me here 😌💌
+            </p>
+
+            <p id="no-message" class="answer hidden">
+                That’s okay 💗 No pressure at all.  
+                I just wanted to ask you the right way.
+            </p>
+
+            <div id="answer-area" class="answer-area hidden">
+                <textarea 
+                    id="love-textarea" 
+                    placeholder="Write something sweet for me here..." 
+                    rows="5">
+                </textarea>
+
+                <button type="button" onclick="submitLove()">Send to me 💌</button>
+
+                <p id="textarea-error" class="error-message"></p>
+                <p id="thank-you" class="thank-you hidden">
+                    Awww, I’m saving this in my heart forever 💖  
+                    (And yes… I received your message!)
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Made just for you, from me ❤️</p>
+    </footer>
+
+    <script>
+        const yesBtn = document.getElementById("yes-btn");
+        const noBtn = document.getElementById("no-btn");
+        const yesMsg = document.getElementById("yes-message");
+        const noMsg = document.getElementById("no-message");
+        const answerArea = document.getElementById("answer-area");
+        const loveTextarea = document.getElementById("love-textarea");
+        const textareaError = document.getElementById("textarea-error");
+        const thankYou = document.getElementById("thank-you");
+
+        yesBtn.addEventListener("click", () => {
+            yesMsg.classList.remove("hidden");
+            noMsg.classList.add("hidden");
+            answerArea.classList.remove("hidden");
+            document.body.classList.add("yes-selected");
+        });
+
+        noBtn.addEventListener("click", () => {
+            noMsg.classList.remove("hidden");
+            yesMsg.classList.add("hidden");
+            answerArea.classList.add("hidden");
+            document.body.classList.remove("yes-selected");
+        });
+
+        // -------- SEND TO WHATSAPP --------
+        function submitLove() {
+            const text = loveTextarea.value.trim();
+
+            if (text.length < 10) {
+                textareaError.textContent = "Write at least a little paragraph for me 💖";
+                return;
+            }
+
+            textareaError.textContent = "";
+            thankYou.classList.remove("hidden");
+
+            const encoded = encodeURIComponent(
+                "Her answer to your question:\n\n" + text
+            );
+
+            const phone = "447352130440";  
+            const url = "https://wa.me/" + phone + "?text=" + encoded;
+
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
