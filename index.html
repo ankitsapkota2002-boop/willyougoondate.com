@@ -1,170 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>A Special Question for You 💌</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Me & My Baby 💕</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="locked">
 
-    <div class="floating-hearts"></div>
+    <!-- PASSWORD SCREEN -->
+    <div class="password-screen" id="password-screen">
+        <div class="password-card float-up">
+            <h1>Hi Baby 💖</h1>
+            <p>There’s a little secret page just for you.</p>
+            <p class="hint">Type the magic phrase to enter:</p>
 
-    <header class="hero fade-in">
-        <h1>Hey You 💖</h1>
-        <p>I’ve been wanting to ask you something special…</p>
-    </header>
+            <form id="password-form">
+                <input 
+                    type="password" 
+                    id="password-input" 
+                    placeholder="Enter the password..."
+                    autocomplete="off"
+                />
+                <button type="submit">Open Our World 💘</button>
+            </form>
 
-    <main>
-        <!-- INTRO -->
-        <section class="section soft-card">
-            <h2>Can We Go Out Together? ✨</h2>
-            <p>
-                I really enjoy talking to you…  
-                And being around you…  
-                And honestly, you make me smile way too much 😅  
-                <br><br>
-                So I made this little page just to ask you something properly.
+            <p class="small-note">
+                (Hint: It’s what I always say… <br>
+                <strong>i love you baby</strong> 😘)
             </p>
-        </section>
+            <p id="password-error" class="error-message"></p>
+        </div>
+    </div>
 
-        <!-- THE PLAN -->
-        <section class="section soft-card">
-            <h2>The Plan for Our Evening 🌙</h2>
+    <!-- MAIN PAGE WRAPPER -->
+    <div id="page-wrapper">
+        <!-- FLOATING HEARTS BACKGROUND -->
+        <div class="floating-hearts"></div>
 
-            <div class="timeline">
-                <div class="step">
-                    <span class="time">1.</span>
-                    <div>
-                        <h3>We meet up</h3>
-                        <p>I’ll be there, probably nervous but very happy to see you 😳</p>
-                    </div>
+        <header class="fade-in">
+            <div class="hearts-bg"></div>
+            <h1>Me & My Girl 💕</h1>
+            <p>You’re my favorite person in the whole world.</p>
+
+            <div class="love-counter">
+                <span>We’ve been in love for</span>
+                <span id="days-counter">0</span>
+                <span>days 💗</span>
+            </div>
+
+            <a href="#videos" class="scroll-down">Scroll to our memories ⬇️</a>
+        </header>
+
+        <nav class="top-nav">
+            <a href="#videos">Videos</a>
+            <a href="#photos">Featured Photos</a>
+            <a href="#gallery">Photo Gallery</a>
+            <a href="#love-letter">Love Letter</a>
+            <a href="#fun-quiz">Fun Quiz</a>
+        </nav>
+
+        <main>
+            <!-- VIDEO SECTION -->
+            <section class="section video-section" id="videos">
+                <h2>Our Little Movies 🎬</h2>
+                <p>Some moments of us I never get tired of watching 💞</p>
+
+                <div class="video-wrapper">
+                    <!-- Change video1.mp4 & video2.mp4 to your real video file names -->
+                    <video src="video.mp4" loop autoplay muted playsinline></video>
+                    <video src="video2.mp4" loop autoplay muted playsinline></video>
                 </div>
 
-                <div class="step">
-                    <span class="time">2.</span>
-                    <div>
-                        <h3>We spend some time together</h3>
-                        <p>Talk, chill, laugh, enjoy the moment… just you and me.</p>
+                <p class="section-note">
+                    These loops are like my love for you: they never stop 😏
+                </p>
+            </section>
+
+            <!-- FEATURED PHOTOS SLIDESHOW -->
+            <section class="photos section" id="photos">
+                <h2>Featured Moments 📸</h2>
+
+                <div class="slideshow">
+                    <button class="slide-btn" id="prev-slide">&#10094;</button>
+
+                    <div class="slide-frame">
+                        <!-- Replace with your own images -->
+                        <img src="2.jpeg" alt="Us photo 1" class="slide active">
+                        <img src="3.jpeg" alt="Us photo 2" class="slide">
+                        <img src="4.jpeg" alt="Us photo 3" class="slide">
                     </div>
+
+                    <button class="slide-btn" id="next-slide">&#10095;</button>
                 </div>
 
-                <div class="step">
-                    <span class="time">3.</span>
-                    <div>
-                        <h3>A night walk with me 🤝🌙</h3>
-                        <p>
-                            Then we go on a little <strong>night walk</strong>,  
-                            and if you’re comfortable…  
-                            <strong>I’d love to hold your hand</strong> while we walk.
+                <p class="section-note">
+                    Every featured picture is one of my favorite memories with you 💗
+                </p>
+            </section>
+
+            <!-- 10-PHOTO GALLERY -->
+            <section class="section gallery-section" id="gallery">
+                <h2>Our Photo Gallery 🥰</h2>
+                <p>A bunch of tiny moments that mean everything to me.</p>
+
+                <div class="photo-grid">
+                    <!-- You can change these names or images -->
+                    <img src="5.jpeg" alt="Our photo 1">
+                    <img src="6.jpeg" alt="Our photo 2">
+                    <img src="7.jpeg" alt="Our photo 3">
+                    <img src="8.jpeg" alt="Our photo 4">
+                    <img src="9.jpeg" alt="Our photo 5">
+                    <img src="10.jpeg" alt="Our photo 6">
+                    <img src="11.jpeg" alt="Our photo 7">
+                    <img src="12.jpeg" alt="Our photo 8">
+                    <img src="13.jpeg" alt="Our photo 9">
+                    <img src="8.jpeg" alt="Our photo 10">
+                </div>
+
+                <p class="section-note">
+                    There’s no camera good enough to capture how much I love you 💞
+                </p>
+            </section>
+
+            <!-- LOVE LETTER -->
+            <section class="love-message section" id="love-letter">
+                <h2>My Love Letter to You 💌</h2>
+                <p class="love-text">
+                    Baby, I made this little website just for you because you mean 
+                    everything to me. Every moment with you makes my heart so full.  
+                    Your smile is my favorite thing, your voice is my comfort, and 
+                    your love is my safe place.  
+                    <br><br>
+                    I promise to love you, support you, annoy you just a little 😜, 
+                    and stand by you always.  
+                    <br><br>
+                    I love you more than words, more than the stars, more than 
+                    anything. Forever & always. 💖
+                </p>
+            </section>
+
+            <!-- FUN QUIZ + HOBBIES + YES/NO PARAGRAPH QUESTION -->
+            <section class="fun-questions section" id="fun-quiz">
+                <h2>Fun Little Quiz 😘</h2>
+
+                <div class="question-box bounce-in">
+                    <p>How much do you love me? 🥺💕</p>
+                    <button type="button" onclick="loveAnswer()">More than anything 😍</button>
+                </div>
+
+                <div class="question-box bounce-in">
+                    <p>What are my hobbies? (Pick the ones that are true! 😏)</p>
+
+                    <!-- Change these to your real hobbies if you want -->
+                    <label><input type="checkbox"> Loving you ❤️</label><br>
+                    <label><input type="checkbox"> Gaming 🎮</label><br>
+                    <label><input type="checkbox"> Sleeping 😴</label><br>
+                    <label><input type="checkbox"> Eating 🍕</label><br>
+                    <label><input type="checkbox"> Watching movies with you 🎬</label><br>
+                </div>
+
+                <!-- YES / NO QUESTION WITH PARAGRAPH -->
+                <div class="question-box bounce-in long-answer-box">
+                    <p class="love-question">Do you promise to love me forever? 💍</p>
+
+                    <div class="yes-no-buttons">
+                        <button type="button" onclick="handleYes()">Yes 🥹</button>
+                        <button type="button" onclick="handleNo()">No 😱</button>
+                    </div>
+
+                    <div id="answer-area" class="answer-area hidden">
+                        <p>Okay, now write a little paragraph for me 😏</p>
+                        <textarea 
+                            id="love-textarea" 
+                            placeholder="Write something sweet for me here..." 
+                            rows="5">
+                        </textarea>
+                        <button type="button" onclick="submitLove()">Send to me 💌</button>
+                        <p id="textarea-error" class="error-message"></p>
+                        <p id="thank-you" class="thank-you hidden">
+                            Awww, I’m saving this in my heart forever 💖
                         </p>
                     </div>
+
+                    <p id="no-message" class="no-message hidden">
+                        Bruh. You clicked “No”? Try that again but with “Yes” 👀
+                    </p>
                 </div>
-            </div>
-        </section>
 
-        <!-- WHY HER -->
-        <section class="section soft-card">
-            <h2>Why I Want This With You 💫</h2>
-            <p>
-                You make things feel light.  
-                You make me smile without trying.  
-                I love the way I feel around you.  
-                And honestly… walking next to you, holding your hand,  
-                sounds perfect to me.
-            </p>
-        </section>
-
-        <!-- THE QUESTION -->
-        <section class="section question-card">
-            <h2>The Big Question 💌</h2>
-            <p class="main-question">
-                Will you go on a date with me  
-                and come on a night walk holding my hand? 🥺🤍
-            </p>
-
-            <div class="buttons">
-                <button id="yes-btn">Yes 💕</button>
-                <button id="no-btn">Maybe / Not yet 🙈</button>
-            </div>
-
-            <p id="yes-message" class="answer hidden">
-                You just made me so happy 😭💖  
-                Before I melt… write a little paragraph for me here 😌💌
-            </p>
-
-            <p id="no-message" class="answer hidden">
-                That’s okay 💗 No pressure at all.  
-                I just wanted to ask you the right way.
-            </p>
-
-            <div id="answer-area" class="answer-area hidden">
-                <textarea 
-                    id="love-textarea" 
-                    placeholder="Write something sweet for me here..." 
-                    rows="5">
-                </textarea>
-
-                <button type="button" onclick="submitLove()">Send to me 💌</button>
-
-                <p id="textarea-error" class="error-message"></p>
-                <p id="thank-you" class="thank-you hidden">
-                    Awww, I’m saving this in my heart forever 💖  
-                    (And yes… I received your message!)
+                <p class="section-note">
+                    No matter how you answer, I already chose you a long time ago 🥰
                 </p>
-            </div>
+            </section>
+        </main>
 
-        </section>
-    </main>
-
-    <footer>
-        <p>Made just for you, from me ❤️</p>
-    </footer>
+        <footer>
+            <p>Made with endless love by <span class="your-name">YOUR NAME</span> ❤️</p>
+        </footer>
+    </div>
 
     <script>
-        const yesBtn = document.getElementById("yes-btn");
-        const noBtn = document.getElementById("no-btn");
-        const yesMsg = document.getElementById("yes-message");
-        const noMsg = document.getElementById("no-message");
+        // -------- PASSWORD LOGIC ----------
+        const passwordForm = document.getElementById("password-form");
+        const passwordInput = document.getElementById("password-input");
+        const passwordError = document.getElementById("password-error");
+        const passwordScreen = document.getElementById("password-screen");
+        const body = document.body;
+
+        const CORRECT_PASSWORD = "i love you baby";
+
+        passwordForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const entered = passwordInput.value.trim().toLowerCase();
+
+            if (entered === CORRECT_PASSWORD) {
+                passwordError.textContent = "";
+                passwordScreen.classList.add("fade-out");
+                body.classList.remove("locked");
+                body.classList.add("unlocked");
+                setTimeout(() => {
+                    passwordScreen.style.display = "none";
+                }, 800); // matches CSS animation duration
+            } else {
+                passwordError.textContent = "Oops, try again baby 😘";
+            }
+        });
+
+        // -------- LOVE COUNTER (DAYS TOGETHER) ----------
+        // 📝 Change this date to your real anniversary date (YYYY, MM-1, DD)
+        const startDate = new Date(2025, 1, 23); // 2023-01-01 (January = 0)
+        const today = new Date();
+        const diffTime = today - startDate;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        document.getElementById("days-counter").textContent = diffDays;
+
+        // -------- LOVE ANSWER POPUP ----------
+        function loveAnswer() {
+            alert("I love you more than you can ever imagine 💘");
+        }
+
+        // -------- SIMPLE SLIDESHOW ----------
+        const slides = document.querySelectorAll(".slide");
+        const prevSlideBtn = document.getElementById("prev-slide");
+        const nextSlideBtn = document.getElementById("next-slide");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                }
+            });
+        }
+
+        prevSlideBtn.addEventListener("click", () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        nextSlideBtn.addEventListener("click", () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Auto-change slide every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // -------- YES / NO QUESTION LOGIC ----------
         const answerArea = document.getElementById("answer-area");
+        const noMessage = document.getElementById("no-message");
         const loveTextarea = document.getElementById("love-textarea");
         const textareaError = document.getElementById("textarea-error");
         const thankYou = document.getElementById("thank-you");
 
-        yesBtn.addEventListener("click", () => {
-            yesMsg.classList.remove("hidden");
-            noMsg.classList.add("hidden");
+        function handleYes() {
+            noMessage.classList.add("hidden");
             answerArea.classList.remove("hidden");
-            document.body.classList.add("yes-selected");
-        });
+            answerArea.classList.add("answer-area-visible");
+            textareaError.textContent = "";
+            thankYou.classList.add("hidden");
+        }
 
-        noBtn.addEventListener("click", () => {
-            noMsg.classList.remove("hidden");
-            yesMsg.classList.add("hidden");
+        function handleNo() {
             answerArea.classList.add("hidden");
-            document.body.classList.remove("yes-selected");
-        });
+            noMessage.classList.remove("hidden");
+            textareaError.textContent = "";
+            thankYou.classList.add("hidden");
+        }
 
-        // -------- SEND TO WHATSAPP --------
         function submitLove() {
             const text = loveTextarea.value.trim();
-
-            if (text.length < 10) {
-                textareaError.textContent = "Write at least a little paragraph for me 💖";
-                return;
+            if (text.length < 15) {
+                textareaError.textContent = "Baby, write at least a little bit more for me 😌";
+                thankYou.classList.add("hidden");
+            } else {
+                textareaError.textContent = "";
+                thankYou.classList.remove("hidden");
+                // you could clear it if you want:
+                // loveTextarea.value = "";
             }
-
-            textareaError.textContent = "";
-            thankYou.classList.remove("hidden");
-
-            const encoded = encodeURIComponent(
-                "Her answer to your question:\n\n" + text
-            );
-
-            const phone = "447352130440";  
-            const url = "https://wa.me/" + phone + "?text=" + encoded;
-
-            window.open(url, "_blank");
         }
     </script>
 </body>
